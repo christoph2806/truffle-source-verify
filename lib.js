@@ -2,9 +2,9 @@ const { spawn } = require("child_process");
 
 async function verify(contractNames, network, license = "UNLICENSED") {
   let explorer;
-  if (["mainnet", "rinkeby", "kovan", "ropsten", "goerli"].includes(network)) {
+  if (["mainnet", "rinkeby", "kovan", "ropsten", "goerli"].includes(network.toLowerCase())) {
     explorer = "etherscan";
-  } else if (["xdai", "sokol"].includes(network)) {
+  } else if (["xdai", "sokol"].includes(network.toLowerCase())) {
     explorer = "blockscout";
   } else {
     console.error(
