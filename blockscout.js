@@ -115,7 +115,7 @@ const parseConfig = (config) => {
     contractsBuildDir,
     optimizationUsed: solcSettings.optimizer.enabled ? true : false,
     runs: solcSettings.optimizer.runs,
-    evmVersion: solcSettings.evmTarget,
+    evmVersion: solcSettings.evmTarget || solcSettings.evmVersion,
     license: config.license,
   };
 };
